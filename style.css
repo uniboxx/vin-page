@@ -8,38 +8,63 @@ nav {
   background-color: white;
   padding: 10px;
 
-  ul {
+  ul,
+  menu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
     justify-content: space-between;
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  menu li {
+    font-size: 1.5em;
+    padding: 0 20px;
+    text-align: center;
+    @media screen and (max-width: 1200px) {
+      font-size: 1em;
+    }
+  }
+  @media screen and (max-width: 870px) {
+    menu {
+      order: 3;
+      width: 100%;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   ul {
     font-weight: bold;
     padding: 0 70px;
-    li {
-      font-size: 1.5em;
+    @media screen and (max-width: 1200px) {
+      padding: 30px;
+    }
 
-      a {
-        color: black;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-
+    & > li {
       &:first-child {
         font-size: 3rem;
         margin-right: 6rem;
+        @media screen and (max-width: 1200px) {
+          margin-right: 2rem;
+        }
       }
       &:last-child {
         margin-left: 6rem;
         font-size: 2rem;
+        @media screen and (max-width: 1200px) {
+          margin-left: 2rem;
+        }
       }
     }
   }
@@ -50,9 +75,21 @@ section.form {
   display: flex;
   align-items: center;
   gap: 12rem;
+  @media screen and (max-width: 1200px) {
+    gap: 6rem;
+  }
+  @media screen and (max-width: 750px) {
+    gap: 2rem;
+  }
 
   img {
     max-width: 35%;
+    @media screen and (max-width: 950px) {
+      width: 40%;
+    }
+    @media screen and (max-width: 570px) {
+      display: none;
+    }
   }
 
   section.forms {
@@ -61,6 +98,16 @@ section.form {
     justify-content: space-between;
     gap: 40px;
     width: 30%;
+    @media screen and (max-width: 1200px) {
+      width: 40%;
+      gap: 20px;
+    }
+    @media screen and (max-width: 950px) {
+      width: 60%;
+    }
+    @media screen and (max-width: 570px) {
+      width: 100%;
+    }
 
     section.select {
       display: flex;
@@ -76,6 +123,12 @@ section.form {
         color: #999;
         text-transform: uppercase;
         appearance: none;
+        @media screen and (max-width: 750px) {
+          font-size: 1rem;
+        }
+        @media screen and (max-width: 350px) {
+          font-size: 0.8rem;
+        }
       }
       .fa-angle-down {
         color: #ccc;
